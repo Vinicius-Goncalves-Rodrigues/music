@@ -2,16 +2,49 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Spotify</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Cadastro</h2>
-    <form action="index.php?action=register" method="post">
-        Nome: <input type="text" name="nome" required><br>
-        Email: <input type="email" name="email" required><br>
-        Senha: <input type="password" name="senha" required><br>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <a href="index.php?action=login">Já possui conta? Faça login</a>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="spotify-logo">Spotify</h1>
+            <h2>Cadastre sua conta</h2>
+            <div class="dd">
+            <button class="fb-login-btn">
+                <img src="img/google.png" alt="" width="20px" height="20px">
+                Continuar com o Google
+            </button>
+            <br><br>
+            <button class="fb-login-btn">
+                <img src="img/facebook (2).png" alt="" width="20px" height="20px">
+                Continuar com o Facebook
+            </button>
+            <br><br>
+            <button class="fb-login-btn">
+                <img src="img/apple.png" alt=""width="20px" height="20px">
+                Continuar com o Apple
+            </button>
+            <br><br>
+            <button class="fb-login-btn">Continuar com o Telefone</button>
+        </div>
+            <br>     <br>
+            <div class="linha"></div>
+            <br><br>
+            <div class="login-container">
+            <form action="index.php?action=register" method="post">
+                <input type="text" name="nome" placeholder="nome de usuario" required>
+                <input type="text" name="email" placeholder="email" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="password" name="senha" placeholder="Confirmar Senha" required>
+                <button type="submit" class="login-btn">Entrar</button>
+                
+                <p class="signup-text">ja tem uma conta? <a href="index.php?action=login">fazer login</a>.</p>
+            </form>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>
