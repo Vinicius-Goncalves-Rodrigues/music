@@ -1,14 +1,15 @@
 <?php
 session_start();
 include_once 'controllers/UserController.php';
+include_once 'config/Database.php';
 
 $action = $_GET['action'] ?? '';
 
-$controller = new UserController();
+$controller = new UserController($pdo);
 
 switch ($action) {
     case 'register':
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (!empty($_POST)) {
             $nome = $_POST['nome'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
@@ -24,7 +25,8 @@ switch ($action) {
         break;
 
     case 'login':
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        if (!empty($_POST)) {
             $email = $_POST['email'];
             $senha = $_POST['senha'];
 
@@ -39,7 +41,7 @@ switch ($action) {
         break;
 
     case 'home':
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_COOKIE['user_id'])) {
             include 'views/home.php';
         } else {
             header("Location: index.php?action=login");
@@ -50,7 +52,13 @@ switch ($action) {
         session_destroy();
         header("Location: index.php?action=login");
         break;
-
+    case 'perfil':
+        if (isset($_COOKIE['user_id'])) {
+            include 'views/perfil.php';
+        } else {
+            header("Location: index.php?action=perfil");
+        }
+        break;
     default:
         header("Location: index.php?action=login");
         break;
