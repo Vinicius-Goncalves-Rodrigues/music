@@ -7,8 +7,7 @@ $controller = new MusicController($pdo);
 $musicas = $controller->listarMusicas();
 
 if(isset($_POST["id_musica"])){
-    $controller->deletarMusica($_POST["id_musica"]);
-    header("Location: #");
+    $controller->atualizarMusica($_POST["id_musica"],$_POST['nome'],$_POST['duracao'],$_POST['genero']);
 }
 
 ?>
@@ -27,9 +26,12 @@ if(isset($_POST["id_musica"])){
             foreach($musicas as $musica){
                 echo"<option value='$musica[id_musica]'>$musica[nome]</option>";
             }?>
-            
         </select>
-        <button type="submit">deletar musica</button>
+        <input type="text" name="nome" placeholder="nome" >
+        <input type="text" name="duracao" placeholder="duração">
+        <input type="text" name="genero" placeholder="gênero">
+
+        <button type="submit">Atualizar Musica</button>
 
     </form> 
 </body>

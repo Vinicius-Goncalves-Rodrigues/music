@@ -13,7 +13,7 @@ switch ($action) {
             $nome = $_POST['nome'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
-
+            
             if ($controller->register($nome, $email, $senha)) {
                 header("Location: index.php?action=login");
             } else {

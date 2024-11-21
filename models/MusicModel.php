@@ -43,10 +43,23 @@ class MusicModel {
 
     public function atualizarMusica($id_musica,$nome,$duracao,$genero)
     {
-        $sql = "UPDATE " . $this->table_name . " nome = ?, duracao = ?, genero = ?";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$id_musica]);
-        return $stmt->fetchALL(PDO::FETCH_ASSOC);
+        if($nome != ""){
+            $sql = "UPDATE " . $this->table_name . " SET nome = ? WHERE id_musica = ? ";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$nome,$id_musica]);
+        }
+    
+        if($duracao != ""){
+            $sql = "UPDATE " . $this->table_name . " SET duracao = ? WHERE id_musica = ? ";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$duracao,$id_musica]);
+        }
+        
+        if($genero != ""){
+            $sql = "UPDATE " . $this->table_name . " SET genero = ? WHERE id_musica = ? ";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$genero,$id_musica]);
+        }
     }
 }
 ?>
