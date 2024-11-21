@@ -51,13 +51,15 @@ if(isset($_POST["operacao"])){
     </header>
     <div class="login-container">   
         <div class="login-box">
+            <h2>Criar Música</h2>
     <form method="POST">
-      <input name="nome" placeholder="nome da música">
+      <input  name="nome" placeholder="nome da música">
       <input  name="duracao" placeholder="duração da música">
       <input  name="genero" placeholder="gênero da música">
       <input name="operacao" type="hidden" value="criar">
-      <button type="submit">Criar Música</button>
+      <button class="login-btn" type="submit">Criar Música</button>
     </form> 
+    <h2>deletar Música</h2>
     <form method="POST">
         <select name="id_musica">
             <?php
@@ -67,9 +69,10 @@ if(isset($_POST["operacao"])){
             
         </select>
         <input name="operacao" type="hidden" value="delete">
-        <button type="submit">deletar musica</button>
+        <button class="login-btn" type="submit">deletar musica</button>
 
     </form>
+    <h2>Atualizar Música</h2>
     <form method="POST">
         <select name="id_musica">
             <?php
@@ -82,7 +85,7 @@ if(isset($_POST["operacao"])){
         <input name="duracao" placeholder="duração da música">
         <input name="genero" placeholder="gênero da música">
         <input name="operacao" type="hidden" value="atualizar">
-        <button type="submit">Atualizar musica</button>
+        <button class="login-btn" type="submit">Atualizar musica</button>
 
     </form> 
 </div>
