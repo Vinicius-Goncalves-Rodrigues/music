@@ -39,24 +39,20 @@ $suasmusicas = $controller->listarMusicasPorUserId($_COOKIE['user_id']);
 
         <section class="content-area">
             <h2>músicas</h2>
-            <ul>
                 <?php
                     foreach($musicas as $musica){
-                        echo"$musica[nome]";
+                        echo"<ul>$musica[nome]</ul>";
                     }
                 ?>
-            </ul>
         </section>
         
         <section class="content-area">
             <h2>suas músicas</h2>
-            <ul>
                 <?php
                     foreach($suasmusicas as $musica){
-                        echo"$musica[nome]";
+                        echo"<ul>$musica[nome]</ul>";
                     }
                 ?>
-            </ul>
         </section>
     </div>
 <!--   

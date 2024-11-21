@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-container">   
         <div class="login-box">
             <h1 class="spotify-logo">Spotify</h1>
             <h2>Faça login na sua conta</h2>

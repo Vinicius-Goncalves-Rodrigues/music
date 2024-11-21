@@ -25,13 +25,32 @@ if(isset($_POST["operacao"])){
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify - Página Inicial</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+  
+    <header>
+        <div class="logo">
+            <img src="img/spotify icon.png" alt="Ispotify" width="100px">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.php?action=home">Início</a></li>
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Sua Biblioteca</a></li>
+                <li><a href="#">Premium</a></li>
+                <li><a href="index.php?action=perfil">Página de perfil</a></li>
+                <li><a href="index.php?action=logout">LogOut</a></li>
+            </ul>    
+        </nav>
+    </header>
+    <div class="login-container">   
+        <div class="login-box">
     <form method="POST">
       <input name="nome" placeholder="nome da música">
       <input  name="duracao" placeholder="duração da música">
@@ -66,5 +85,10 @@ if(isset($_POST["operacao"])){
         <button type="submit">Atualizar musica</button>
 
     </form> 
+</div>
+</div>
+    <footer>
+        <p>&copy; 2024 Spotify AB</p>
+    </footer>
 </body>
 </html>
